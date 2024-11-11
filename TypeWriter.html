@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeWriter</title>
+    <style>
+        body {
+            font-size: 5rem;
+            text-align: center;
+            color: rgb(6, 255, 172);
+            background-color: black;
+            overflow-y: scroll;
+        }
+    
+        .slidecontainer {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            flex-direction: column;
+        }
+    
+        .slider {
+            -webkit-appearance: none;            
+            width: 100%;
+            height: 15px;
+            border-radius: 5px;
+            background: white;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;            
+        }
+    
+        .slider:hover {
+            opacity: 1;
+        }
+    
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: rgb(6, 255, 172);
+            cursor: pointer;
+        }
+    
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #04AA6D;
+            cursor: pointer;
+        }
+    
+        html {
+            overflow: scroll;
+        }
+    
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <h2>Typewriter Effect</h2>
+    <p id="baal">I am a</p>
+
+    <div class="slidecontainer" id="SliderMlider">
+        <input type="range" min="100" max="1000" value="500" class="slider" id="myRange">
+        <p>Speed: <span id="demo"></span></p>
+    </div>
+
+
+    <script>
+        const words = [" Solved it. Multiple space   can be   added   .", " bad person", " fool", "n idiot", " stupid", " poor", "n agile human being. Checking the      spacing"];
+        let charchar = [];
+        let temp = "I am a";
+        let check = false;
+        let i = 0;
+        let j = 0;
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        let delay;
+        let interval;
+        output.innerHTML = slider.value;
+        delay = slider.value;
+        slider.oninput = function () {
+            output.innerHTML = this.value;
+            delay = 1100 - this.value;
+            localStorage.setItem("Delay", delay);
+        }
+
+        if (localStorage.getItem("Delay") > 99 && localStorage.getItem("Delay") < 1001) {
+            delay = localStorage.getItem("Delay");
+            document.getElementById("myRange").value = 1100 - delay;
+            output.innerHTML = 1100 - delay;
+        }
+        else {
+            delay = 300;
+        }
+        charchar = RetWord().split("");
+        Executioner();
+
+        function Executioner() {
+            clearInterval(interval);
+            if (check == false) {
+                temp = temp + RetChar(charchar);
+                document.getElementById("baal").innerHTML = temp.replace(/ /g, "&nbsp;");
+            }
+            else {
+                temp = "I am a";
+                charchar = RetWord().split("");
+            }
+
+            interval = setInterval(Executioner, delay);
+        }
+
+        function RetWord() {
+            check = false;
+            let _temp = words[i];
+            if (i + 1 < words.length) {
+                i = i + 1;
+            }
+            else {
+                i = 0;
+            }
+            return _temp;
+        }
+        function RetChar(cc) {
+            let _temp = cc[j];
+            if (j + 1 < cc.length) {
+                j = j + 1;
+                check = false;
+            }
+            else {
+                j = 0;
+                check = true;
+            }
+            return _temp;
+        }
+        function ResetTime() {
+            clearInterval();
+        }
+    </script>
+</body>
+
+</html>

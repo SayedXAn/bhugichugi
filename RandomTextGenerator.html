@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RandomTextGenerator</title>
+    <style>
+        body {
+            font-size: 5rem;
+            text-align: center;
+            color: rgb(6, 255, 172);
+            background-color: black;
+            overflow-y: scroll;
+        }
+
+        html {
+            overflow: scroll;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>Generating Some Words Related to My Life</h4>
+    <p id="backend-message">Rage</p>
+
+    <script>
+        const words = ["Singularity", "Valorant", "Blood", "Unity", "Money", "Brotherhood", "Speed", "Gun", "Rage", "Dream", "Code", "Night", "Depression", "Vision", "Super Power", "Love", "Sick","Thailand", "Lucid Dream", "Poor", "IMS", "HMO", "HDMI", "Forbes30Under30"];
+        let temp = 0;
+        let rand = Math.floor(Math.random() * words.length);
+
+        setInterval(() => {
+            while (temp == rand) {
+                rand = Math.floor(Math.random() * words.length);
+            }
+            temp = rand;
+            document.getElementById('backend-message').textContent = words[rand];
+        }, 150);
+    </script>
+</body>
+
+</html>
