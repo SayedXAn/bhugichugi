@@ -10,53 +10,141 @@
             font-size: 5rem;
             text-align: center;
             color: rgb(6, 255, 172);
-            background-color: black;
+            background-color: #000000;
             overflow-y: scroll;
         }
 
-        .button {
-            border: none;
-            color: white;
-            padding: 16px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-            cursor: pointer;
-        }
-
-        .button1 {
-            background-color: black;
-            color: rgb(6, 255, 172);
-            border: 2px solid rgb(6, 255, 172);
-            border-radius: 8px;
-        }
-
-        .button1:hover {
-            background-color: rgb(6, 255, 172);
-            color: black;
-        }
-
-        html {
-            overflow: scroll;
+        h3 {
+            font-size: 5rem;
+            color: #2ec4b6;
         }
 
         ::-webkit-scrollbar {
             width: 0px;
             background: transparent;
         }
+
+        button {
+            background-color: #000000;
+            border-radius: 10px;
+            color: rgb(6, 255, 172);
+            border: 2px solid rgb(6, 255, 172);
+            line-height: 1;
+            font-size: 20px;
+            margin-left: 0;
+            margin-right: 0;
+            padding: 20px 25px;
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            min-width: 200px;
+            text-align: center;
+            padding: 16px 32px;
+
+        }
+
+        button:disabled {
+            background-color: #949494;
+            color: #ffffff;
+            border: 3px solid #000000;
+            cursor: not-allowed;
+        }
+
+        button:disabled:hover {
+            -webkit-animation-name: none;
+            animation-name: none;
+        }
+
+        button:hover,
+        button:focus {
+            background-color: rgb(6, 255, 172);
+            border-radius: 10px;
+            color: #000000;
+            -webkit-animation-name: wobble;
+            animation-name: wobble;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+            -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+        }
+
+        @-webkit-keyframes wobble {
+            16.65% {
+                -webkit-transform: translateX(8px);
+                transform: translateX(8px);
+            }
+
+            33.3% {
+                -webkit-transform: translateX(-6px);
+                transform: translateX(-6px);
+            }
+
+            49.95% {
+                -webkit-transform: translateX(4px);
+                transform: translateX(4px);
+            }
+
+            66.6% {
+                -webkit-transform: translateX(-2px);
+                transform: translateX(-2px);
+            }
+
+            83.25% {
+                -webkit-transform: translateX(1px);
+                transform: translateX(1px);
+            }
+
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes wobble {
+            16.65% {
+                -webkit-transform: translateX(8px);
+                transform: translateX(8px);
+            }
+
+            33.3% {
+                -webkit-transform: translateX(-6px);
+                transform: translateX(-6px);
+            }
+
+            49.95% {
+                -webkit-transform: translateX(4px);
+                transform: translateX(4px);
+            }
+
+            66.6% {
+                -webkit-transform: translateX(-2px);
+                transform: translateX(-2px);
+            }
+
+            83.25% {
+                -webkit-transform: translateX(1px);
+                transform: translateX(1px);
+            }
+
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+        }
     </style>
 </head>
 
 <body>
+    <!--color: rgb(6, 255, 172);-->
     <h6>কি লাগবে, ভাই? কিছু প্রজেক্ট আছে এখানে, মন চাইলে দেখেন</h6>
-    <a href="https://sayedanowar.xyz/" target="_blank"><button class="button button1">Resume</button></a>
-    <a href="TypeWriter.html" target="_blank"><button class="button button1">TypeWriter</button></a>
-    <a href="RandomTextGenerator.html" target="_blank"><button class="button button1">RandomTextGenerator</button></a>
-    <a href="PrimeFinder.html" target="_blank"><button class="button button1">Prime Finder</button></a>
-    <a href="Calculator.html" target="_blank"><button class="button button1">Calculator</button></a>
+    <a href="https://sayedanowar.xyz/" target="_blank"><button class="button">Resume</button></a>
+    <a href="TypeWriter.html" target="_blank"><button class="button">TypeWriter</button></a>
+    <a href="RandomTextGenerator.html" target="_blank"><button class="button">RandomTextGenerator</button></a>
+    <a href="PrimeFinder.html" target="_blank"><button class="button">Prime Finder</button></a>
+    <a href="Calculator.html" target="_blank"><button class="button">Calculator</button></a>
     <h6>দামে কম মানে ভালো সার্ভিস<br>01610099913</h6>
 </body>
 
