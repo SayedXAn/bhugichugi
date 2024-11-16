@@ -103,21 +103,33 @@
 </head>
 
 <body>
-    <label for="fname">First name:</label>
-    <input type="number" id="fnum" name="fname" value="0"><br><br>
-
-    <label for="fname">First name:</label>
-    <input type="number" id="snum" name="fname" value="0"><br><br>
-
-
-
-    <button onclick="TextChange()">asdasd</button>
-
+    <label for="fname" style="font-size: 70px;">First Number:</label>
+    <input type="number" id="fnum" name="fname" value="" style="font-size:large;"><br>
+    <label for="fname" style="font-size: 70px;">Second Number:</label>
+    <input type="number" id="snum" name="fname" value="" style="font-size:large;"><br>
+    <button onclick="Sum()">Sum()</button>
+    <button onclick="Subtract()">Subtract()</button>
+    <button onclick="Division()">Division()</button>
+    <button onclick="Multiplication()">Multiplication()</button>
     <p id="displayText">0</p>
 </body>
+
+
 <script>
-    function TextChange() {
-        document.getElementById("displayText").innerHTML = document.getElementById("fnum").value + document.getElementById("snum").value;
+    function Sum() {
+        document.getElementById("displayText").innerHTML = parseInt(document.getElementById("fnum").value) + parseInt(document.getElementById("snum").value);
+    }
+
+    function Subtract() {
+        document.getElementById("displayText").innerHTML = parseInt(document.getElementById("fnum").value) - parseInt(document.getElementById("snum").value);
+    }
+
+    function Division() {
+        document.getElementById("displayText").innerHTML = parseInt(document.getElementById("fnum").value) / parseInt(document.getElementById("snum").value);
+    }
+
+    function Multiplication() {
+        document.getElementById("displayText").innerHTML = parseInt(document.getElementById("fnum").value) * parseInt(document.getElementById("snum").value);
     }
 </script>
 
